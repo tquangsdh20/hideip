@@ -1,5 +1,9 @@
 <h1 align="center">HideIP library</h1>
 
+<p align="center">
+<img src="https://github.com/tquangsdh20/hideip/actions/workflows/github-build.yml/badge.svg?style=plastic"> <a href="https://app.codecov.io/gh/tquangsdh20/hideip/blob/6ad7e9708f36c63f003c5fd6b1d2c763da50703d/hideip/hideip.py"><img src="https://codecov.io/gh/tquangsdh20/hideip/branch/main/graphs/badge.svg?branch=main"></a> <img src="https://img.shields.io/github/license/tquangsdh20/hideip"> <img src = "https://img.shields.io/pypi/pyversions/memrise"> <img src="https://img.shields.io/pypi/implementation/text2ipa"> <img src="https://img.shields.io/badge/author-tquangsdh20-orange">
+</p>
+
 ## Installation
 
 **Windows**
