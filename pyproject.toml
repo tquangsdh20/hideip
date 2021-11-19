@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "hideip"
+version = "0.1.0"
+description = "Hide IP Library"
+authors = ["Joseph Quang <tquangsdh20@hcmut.edu.vn>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "6.2.5"
+requests = "2.23.0"
+flake8 = "3.9.2"
+tox = "3.9.2"
+pytest-cov = "^2.12"
+mypy = "0.910"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0","wheel","setuptools"]
+build-backend = "poetry.core.masonry.api"
