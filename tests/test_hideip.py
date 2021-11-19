@@ -1,5 +1,5 @@
 from hideip import __version__
-from hideip import proxy,
+from hideip import proxy, HideMe
 import pytest
 
 
