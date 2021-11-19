@@ -1,8 +1,11 @@
 import requests
+from typing import List
 from urllib3.exceptions import InsecureRequestWarning
+
 requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
-def open_csv(filename) -> list:
+
+def open_csv(filename) -> List[str]:
     fh = open(filename, "r")
     retList = []
     for line in fh:

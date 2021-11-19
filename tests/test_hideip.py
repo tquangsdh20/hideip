@@ -1,5 +1,5 @@
 from hideip import __version__
-from hideip import proxy, HideMe
+from hideip import proxy
 import pytest
 
 
@@ -34,4 +34,4 @@ def test_proxy(ip, expected):
 
 
 def test_HideMe(url_connection):
-    assert url_connection.status_code==200
+    assert url_connection.status_code == 200
