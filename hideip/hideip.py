@@ -22,10 +22,7 @@ def is_usable(ip: str) -> bool:
     retBool = True
     try:
         requests.get(
-            "https://httpbin.org/ip",
-            proxies=proxy(ip),
-            timeout=1,
-            verify=False
+            "https://httpbin.org/ip", proxies=proxy(ip), timeout=1, verify=False
         )
     except (
         requests.exceptions.ConnectTimeout,
