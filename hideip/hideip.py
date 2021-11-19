@@ -1,5 +1,6 @@
 import requests
-
+from urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 def open_csv(filename) -> list:
     fh = open(filename, "r")
@@ -17,9 +18,17 @@ def proxy(ip: str):
 def is_usable(ip: str) -> bool:
     retBool = True
     try:
-        requests.get("https://httpbin.org/ip", proxies=proxy(ip), timeout=1)
-    except requests.exceptions.ConnectTimeout as e:
-        print(e)
+        requests.get(
+            "https://httpbin.org/ip",
+            proxies=proxy(ip),
+            timeout=1,
+            verify=False
+        )
+    except (
+        requests.exceptions.ConnectTimeout,
+        requests.exceptions.ReadTimeout,
+        requests.exceptions.ConnectionError,
+    ):
         retBool = False
     return retBool
 
@@ -32,7 +41,7 @@ class HideMe:
 
     def torrent(self):
         self.__cur += 1
-        while is_usable(self.__ipList[self.__cur]):
+        while is_usable(self.__ipList[self.__cur]) is False:
             self.__cur += 1
             self.__cur %= self.__max
         return proxy(self.__ipList[self.__cur])
@@ -40,7 +49,6 @@ class HideMe:
 
 if __name__ == "__main__":
     file = "./socks5.csv"
-    proxies = open_csv(file)
-    for ip in proxies:
-        if is_usable(ip):
-            print(proxy(ip))
+    hm = HideMe(file)
+    print(hm.torrent())
+    print(hm.torrent())

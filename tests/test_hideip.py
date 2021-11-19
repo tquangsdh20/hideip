@@ -31,3 +31,7 @@ def test_version():
 )
 def test_proxy(ip, expected):
     assert proxy(ip) == expected
+
+
+def test_HideMe(url_connection):
+    assert url_connection.status_code==200
